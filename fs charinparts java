@@ -1,0 +1,36 @@
+/*Bob palying game with his Sister, in this game bob giving set of char's to his sister
+and asking her to divide those char for given number of parts(n),
+if division is not possible the display -1.
+sample data1:
+input:
+hello ravi im here
+4
+output:
+-1
+sample data2:
+input:
+hello ravi
+2
+output:
+hello
+ ravi
+*/
+import java.util.*;
+import java.io.*;
+class Test{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        int len=str.length();
+        int n=sc.nextInt();
+        int nlen=len/n;
+        if(len%n!=0){
+            System.out.println("-1");
+        }
+        else{
+            for(int i=0;i<len;i+=nlen){
+                System.out.println(str.substring(i,i+nlen));
+            }
+        }
+    }
+}
